@@ -45,3 +45,26 @@ jobs:
         run: |
           pwd 
           ls -ltr
+  job3:
+    name: job3
+    needs: job1
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Creation repertoire pour telechargement
+        run: |
+          mkdir -p artifact-1
+      - name: Verification du repertoire actuel
+        run: |
+          pwd
+          ls -ltr
+      - name: Telechargement de artifact-1
+        uses: actions/download-artifact@v6.0.0
+        with:
+          name: artifact-1
+          path: artifact-1
+      - name: Verification du repertoire actuel apres telechargement
+        run: |
+          pwd
+          echo "Verification du repertoire artifact-1"
+          ls -ltr artifact-1
