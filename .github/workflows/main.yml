@@ -2,7 +2,7 @@ name: test-actions
 
 on:
   schedule:
-    - cron: '30 * * * *'
+    - cron: '35 * * * *'
   workflow_dispatch:
   #push:
 #name: test-actions
