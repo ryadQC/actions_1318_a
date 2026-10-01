@@ -1,0 +1,42 @@
+name: test-actions
+on: push
+
+jobs:
+  test-job1:
+    name: test-job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: say hello
+        run: echo "Salut actions!"
+
+      - name: verification du runner
+        run: cat /etc/os-release
+
+      - name: utilisation de sleep
+        run: sleep 5
+
+  test-job2:
+    name: test-job2
+    runs-on: ubuntu-latest
+    steps:
+      - name: verification du hostname
+        run: hostname
+
+      - name: utilisation de sleep
+        run: sleep 10
+
+  test-job3:
+    name: test-job3
+    needs: test-job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: job avec une dependance (test-job2)
+        run: sleep 10
+
+  test-job4:
+    name: test-job4
+    needs: [test-job1, test-job2, test-job3]
+    runs-on: ubuntu-latest
+    steps:
+      - name: job avec plusieurs dependances (test-job1, test-job2, test-job3)
+        run: sleep 10
