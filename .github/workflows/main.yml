@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '45 * * * *'
   workflow_dispatch:
-  #push:
+  push:
 #name: test-actions
 #on: push
 jobs:
