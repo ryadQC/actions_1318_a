@@ -2,7 +2,7 @@ name: main
 
 on:
   schedule:
-    - cron: '35 * * * *'
+    - cron: '45 * * * *'
   workflow_dispatch:
   #push:
 #name: test-actions
