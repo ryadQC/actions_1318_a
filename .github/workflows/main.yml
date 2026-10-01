@@ -1,5 +1,12 @@
 name: test-actions
-on: push
+
+on:
+  schedule:
+    - cron: '30 * * * *'
+  workflow_dispatch:
+  #push:
+#name: test-actions
+#on: push
 jobs:
   test-job1:
     name: test-job1
