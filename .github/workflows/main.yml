@@ -1,12 +1,17 @@
 name: test-actions
 on: push
 jobs:
-  test-job:
+  test-job1:
     name: test-job1
     runs-on: ubuntu-latest
     steps:
       - name: say hello
         run: echo "Salut actions!"
-
       - name: verification du runner
         run: cat /etc/os-release
+  test-job2:
+    name: test-job2
+    runs-on: ubuntu-latest
+    steps:
+      - name: verification du hostname
+        run: hostname
